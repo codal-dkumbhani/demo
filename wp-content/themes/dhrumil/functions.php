@@ -162,13 +162,7 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-/**LAVA
-HOME
-ABOUT
-TESTIMONIALS
-DROP DOWN
-CONTACT US
-
+/**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
@@ -184,4 +178,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+register_sidebar( array(
+	'name' => __( 'Copywrites', 'Dhrumil' ),
+	'id' => 'in-header-widget-area',
+	'description' => __( 'A widget area located to the right hand side of the header, next to the site title and description.', 'rmccollin' ),
+	'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>',
+   ) );
 

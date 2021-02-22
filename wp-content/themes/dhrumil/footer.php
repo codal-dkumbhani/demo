@@ -56,10 +56,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="sub-footer">
-					<?php do_action( 'jobscout_footer' ); ?>
-                        <p>Copyright &copy; 2020 Lava Landing Page
-
-                        | Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+						<?php dynamic_sidebar( 'in-header-widget-area' ); ?>
                     </div>
                 </div>
             </div>
