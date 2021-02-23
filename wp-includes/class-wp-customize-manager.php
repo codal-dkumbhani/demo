@@ -5087,7 +5087,7 @@ final class WP_Customize_Manager {
 				'priority' => 20,
 			)
 		);
-
+		
 		$this->add_setting(
 			'blogname',
 			array(
@@ -5285,6 +5285,8 @@ final class WP_Customize_Manager {
 				)
 			)
 		);
+
+		
 
 		/* Custom Header */
 
@@ -5594,6 +5596,7 @@ final class WP_Customize_Manager {
 				'active_callback' => array( $this, 'has_published_pages' ),
 			)
 		);
+		
 
 		$this->add_setting(
 			'show_on_front',

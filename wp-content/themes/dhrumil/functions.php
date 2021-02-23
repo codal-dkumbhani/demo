@@ -189,3 +189,32 @@ register_sidebar( array(
 	'after_title' => '</h3>',
    ) );
 
+   register_sidebar( array(
+	'name' => __( 'Trend Analysis', 'Dhrumil' ),
+	'id' => 'Trend Analysis',
+	'description' => __( 'A widget area located to the right hand side of the header, next to the site title and description.', 'rmccollin' ),
+	'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>',
+   ) );
+
+   register_sidebar( array(
+	'name' => __( 'Site Optimization', 'Dhrumil' ),
+	'id' => 'Site Optimization',
+	'description' => __( 'A widget area located to the right hand side of the header, next to the site title and description.', 'rmccollin' ),
+	'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>',
+   ) );
+
+   register_sidebar( array(
+	'name' => __( 'Email Design', 'Dhrumil' ),
+	'id' => 'Email Design',
+	'description' => __( 'A widget area located to the right hand side of the header, next to the site title and description.', 'rmccollin' ),
+	'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>',
+   ) );
