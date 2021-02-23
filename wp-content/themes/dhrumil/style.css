@@ -647,6 +647,19 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
+/* Submenu */
+li > ul {
+	display: none;
+  }
+  
+  li:hover > .sub-menu {
+	
+	display: inline-block;
+    position: absolute;
+	
+  }
+  
+
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -967,3 +980,4 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+

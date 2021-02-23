@@ -57,13 +57,14 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
 						
-                        
-						<li class="scroll-to-section"><?php  wp_nav_menu( array(
+                        <ul>
+						    <li class="scroll-to-section"><?php  wp_nav_menu( array(
 									'menu' => 'main',
 									'menu_class' => 'nav',
 									'menu_id' => 'primary-menu'
 									
 								) ); ?></li>
+                            
 								
 
                         </ul>
