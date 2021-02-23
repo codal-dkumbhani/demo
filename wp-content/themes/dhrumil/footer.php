@@ -21,15 +21,13 @@
                         <div class="contact-form">
                             <form id="contact" action="" method="post">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-12">
+                                <div class="col-sm-12">
 									<fieldset style="background-color: rgba(250,250,250,0.3);"><?php $post_7 = get_post( 37 ); 
 												$title = $post_7->post_title;
 												$content = $post_7->post_content;
 												echo do_shortcode($content);
 										?></fieldset>
-
-                                        
-                                    </div>
+                                </div>
                                 </div>
                             </form>
                         </div>

@@ -52,7 +52,8 @@
                         <!-- ***** Logo Start ***** -->
 						
                         <?php the_custom_logo(); ?>
-						<?php  wp_title(''); ?>
+					    
+                        
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
 						

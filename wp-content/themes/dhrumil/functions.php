@@ -218,3 +218,5 @@ register_sidebar( array(
 	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
    ) );
+
+   

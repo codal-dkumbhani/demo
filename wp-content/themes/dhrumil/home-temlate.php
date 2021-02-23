@@ -127,14 +127,15 @@ get_header();
                         <p>Suspendisse vitae laoreet mauris. Fusce a nisi dapibus, euismod purus non, convallis odio.
                             Donec vitae magna ornare, pellentesque ex vitae, aliquet urna.</p>
 							
-                    </div>
+                    </div><?php echo do_shortcode('[sp_testimonial id="108"]'); ?>
                 </div>
                 <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"> 
                     <div class="owl-carousel owl-theme">
-					
+					<?php echo "hello" ?>
                         <div class="item service-item">
                             <div class="author">
+                            
 							
                                 <i><img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial-author-1.png" alt="Author One"></i>
                             </div>
