@@ -19,7 +19,7 @@
 				items: 2
 			}
 		}
-	})
+	});
 
 
 	$(window).scroll(function () {
