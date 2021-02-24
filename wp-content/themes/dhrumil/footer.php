@@ -26,6 +26,7 @@
 												$title = $post_7->post_title;
 												$content = $post_7->post_content;
 												echo do_shortcode($content);
+                                                
 										?></fieldset>
                                 </div>
                                 </div>
