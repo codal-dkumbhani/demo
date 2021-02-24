@@ -51,7 +51,16 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <?php the_custom_logo(); ?>
+                        
+                        <?php
+                            if (display_header_text()==true){
+                                echo '<h1>'.get_bloginfo( 'name' ) .'</h1>';
+                                echo '<h2>'.get_bloginfo('description').'</h2>';                            
+                            }
+                            else{
+                                 the_custom_logo();
+                            }
+                        ?>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul>
