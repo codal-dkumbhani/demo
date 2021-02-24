@@ -27,7 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.css">
-    
+
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/templatemo-lava.css">
 
@@ -51,25 +51,19 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-						
                         <?php the_custom_logo(); ?>
-					    
-                        
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-						
                         <ul>
 						    <li class="scroll-to-section"><?php  wp_nav_menu( array(
 									'menu' => 'main',
 									'menu_class' => 'nav',
 									'menu_id' => 'primary-menu'
-									
 								) ); ?></li>
-                            
-								
-
                         </ul>
-                        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a> 
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>

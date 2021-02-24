@@ -111,7 +111,7 @@
 					currLink.removeClass("active");
 				}
 			});
-		})
+		});
 	});
 
 	const Accordion = {
