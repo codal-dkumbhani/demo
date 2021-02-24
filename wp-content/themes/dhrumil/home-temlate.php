@@ -76,36 +76,32 @@ get_header();
             <div class="row">
                 <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <?php dynamic_sidebar( 'sideimage' ); ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                <div class="rounded img-fluid d-block mx-auto" >
+                    <?php   
+                    $post = get_post(188);
+                        
+                        /* grab the url for the full size featured image */
+                        $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
+                        
+                        /* link thumbnail to full size image for use with lightbox*/
+                        echo '<a href="'.$featured_img_url.'"  rel="lightbox">'; 
+                          the_post_thumbnail('full');
+                        echo '</a>';
+                        ?>
+                </div>
+                    
                 </div>
                 <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                     <ul>
                         <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                             
                             <div class="text">
-                                <h4><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-icon-01.png" alt="">Vestibulum pulvinar rhoncus</h4>
-                                <p>Please do not redistribute this template ZIP file for a download purpose. You may <a
-                                rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact</a> us for
-                            additional licensing of our template or to get a PSD file.</p>
-                            </div>
-                        </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                            
-                            <div class="text">
-                                <h4><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-icon-02.png" alt="">Sed blandit quam in velit</h4>
-                                <p>You can <a rel="nofollow"
-                                        href="https://templatemo.com/tm-540-lava-landing-page">download Lava
-                                        Template</a> from our website. Duis viverra, ipsum et scelerisque placerat, orci
-                                    magna consequat ligula.</p>
-                            </div>
-                        </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
-                            
-                            <div class="text">
-                                <h4><img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-icon-03.png" alt="">Aenean faucibus venenatis</h4>
-                                <p>Phasellus in imperdiet felis, eget vestibulum nulla. Aliquam nec dui nec augue
-                                    maximus porta. Curabitur tristique lacus.</p>
+                                <?php 
+                                $post_7 = get_post( 188 );
+                                $title = $post_7->post_title;
+                                $content = $post_7->post_content;
+                                ?>  
+                                <p><?php echo $content ?></p>
                             </div>
                         </li>
                     </ul>
