@@ -29,8 +29,11 @@ get_header();
 
 			/* Start the Loop */
 			while ( have_posts() ) :
+				
 				the_post();
-
+				?>
+				<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<?php
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
