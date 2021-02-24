@@ -28,6 +28,7 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
+			
 			$dhrumil_comment_count = get_comments_number();
 			if ( '1' === $dhrumil_comment_count ) {
 				printf(
