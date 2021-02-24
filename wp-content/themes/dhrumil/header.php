@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/templatemo-lava.css">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/404.css">
 
 	<?php wp_head(); ?>
 </head>
@@ -79,6 +80,7 @@
             </div>
         </div>
     </header>
+</div>
 		
 			
 

@@ -1,5 +1,5 @@
 /*!
-Theme Name: dhrumil
+Theme Name: Dhrumil
 Theme URI: #
 Author: Dhrumil Kumbhani
 Author URI: #
@@ -772,7 +772,8 @@ li > ul {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: auto;
+width: 1000px;
 }
 
 .page-links {
