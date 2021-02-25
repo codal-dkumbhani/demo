@@ -21,12 +21,10 @@ get_header();
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <?php 
-							$post_7 = get_post( 13 );
-							$title = $post_7->post_title;
-							$content = $post_7->post_content;
-						?>
-                        <?php echo $content; ?>
+                        <h1><?php echo esc_attr( get_post_meta( get_the_ID(), 'title', true ) ); ?> 
+                        <em><?php echo esc_attr( get_post_meta( get_the_ID(), 'crate', true ) ); ?></em></h1>
+                        <p><?php echo esc_attr( get_post_meta( get_the_ID(), 'home-text', true ) ); ?></p> 
+                        <a href="<?php echo esc_attr( get_post_meta( get_the_ID(), 'home-starting-button-value', true ) ); ?>" class="main-button-slider"><?php echo esc_attr( get_post_meta( get_the_ID(), 'home-starting-button', true ) ); ?></a>
                     </div>
                 </div>
             </div>
@@ -43,7 +41,7 @@ get_header();
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
-                        <?php dynamic_sidebar( 'Trend Analysis'); ?>
+                        <?php echo get_post_meta($post->ID, '_diwp_custom_editor', true); ?>
                         </div>
                     </div>
                 </div>
@@ -144,3 +142,7 @@ get_header();
 <?php
 
 get_footer();
+
+
+
+

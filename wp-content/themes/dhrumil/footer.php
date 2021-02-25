@@ -25,6 +25,7 @@
 									<fieldset style="background-color: rgba(250,250,250,0.3);"><?php $post_7 = get_post( 37 ); 
 												$title = $post_7->post_title;
 												$content = $post_7->post_content;
+                                                
 												echo do_shortcode($content);
                                                 
 										?></fieldset>

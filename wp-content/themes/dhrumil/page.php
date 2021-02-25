@@ -35,6 +35,7 @@
 
                                 endwhile;
                                 ?>
+                    
                 </div>
                 </main><!-- .site-main -->
 </div><!-- .content-area -->

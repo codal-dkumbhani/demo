@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title><?php wp_title(''); ?></title>
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.css">
@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl-carousel.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/404.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    
 
 	<?php wp_head(); ?>
 </head>
