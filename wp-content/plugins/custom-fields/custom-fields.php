@@ -80,7 +80,7 @@ add_action('add_meta_boxes', 'diwp_add_wysiwyg_editor_metabox');
         wp_editor( $content, 'diwp_custom_editor', array() );
         
     }
-
+  
     function diwp_save_custom_wp_editor_content(){
  
         global $post;

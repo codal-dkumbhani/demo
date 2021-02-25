@@ -41,7 +41,11 @@ get_header();
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
-                        <?php echo get_post_meta($post->ID, '_diwp_custom_editor', true); ?>
+                        <?php echo get_post_meta($post->ID, '_diwp_custom_editor', true);
+                        
+                      
+                        
+                        ?>
                         </div>
                     </div>
                 </div>
