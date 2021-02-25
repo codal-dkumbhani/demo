@@ -13,18 +13,34 @@
  */
 
  get_header(); ?>
- 
+ <style>
+ .pagebox{
+  margin-right: 20%;
+  margin-left: 20%;
+ }
+</style>
  <br><br><br><br><br><br><br><br>
 <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
+                <div class="pagebox">
                                 <?php
                                 // Start the loop.
                                 while ( have_posts() ) : the_post();
                                                 // Include the page content template.
-                                                get_template_part( 'template-parts/content', 'page' );
+
+                                                $page_id = get_the_ID();  //Page ID
+                                                $page_data = get_page( $page_id ); 
+
+                                                //store page title and content in variables
+                                                $title = $page_data->post_title; 
+                                                $content = apply_filters('the_content', $page_data->post_content);
+                                                ?><h2><?php echo $title; ?></h2><br> <?php
+
+                                                echo $content;
 
                                 endwhile;
                                 ?>
+                </div>
                 </main><!-- .site-main -->
 </div><!-- .content-area -->
 <?php get_footer(); ?>

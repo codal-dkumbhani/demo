@@ -32,7 +32,7 @@ get_header();
 				
 				the_post();
 				?>
-				<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></a></h2>
 			<?php
 				/*
 				 * Include the Post-Type-specific template for the content.
