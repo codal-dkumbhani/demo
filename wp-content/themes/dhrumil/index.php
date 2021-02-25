@@ -14,9 +14,15 @@
 
 get_header();
 ?>
+ <style>
+ .pagebox{
+  margin-right: 20%;
+  margin-left: 20%;
+ }
+</style>
 <br><br><br><br><br><br><br><br>
 	<main id="primary" class="site-main">
-
+	<div class="pagebox">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) :
@@ -51,7 +57,7 @@ get_header();
 
 		endif;
 		?>
-
+	</div>
 	</main><!-- #main -->
 
 <?php

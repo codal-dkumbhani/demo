@@ -74,7 +74,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/imgfix.min.js"></script>
 	
 	<!-- Global Init -->
-	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/custom1.js"></script>
+	<script src="/assets/js/custom.js"></script>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

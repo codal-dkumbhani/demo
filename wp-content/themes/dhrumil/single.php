@@ -9,13 +9,14 @@
 
 get_header();
 ?>
+ 
 <br><br><br><br><br><br><br>
 	<main id="primary" class="site-main">
-
+	<div class="pagebox">
 		<?php
 		while ( have_posts() ) :
 			the_post();?>
-			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2><?php
+			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></a></h2><?php
 			get_template_part( 'template-parts/content', get_post_type() );
 			the_post_navigation(
 				array(
@@ -31,7 +32,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+	</div>
 	</main><!-- #main -->
 
 <?php
