@@ -20,12 +20,12 @@
                 <div class="col-lg-12">
                     <div id="inputFormRow">
                         <div class="input-group mb-3">
-                            <input type="file"  id = "img[]" name="img[]" class="form-control m-input" placeholder="Enter icon" autocomplete="off">
-                            <input type="text" id = "title[]" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">
-                            <input type="text" id = "dis[]" name="dis[]" class="form-control m-input" placeholder="Enter Discripation" autocomplete="off">
-                            <div class="input-group-append">                
-                                <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
-                            </div>
+                                <input type="file"  id = "img[]" name="img[]" class="form-control m-input" placeholder="Enter icon" autocomplete="off">
+                                <input type="text" id = "title[]" name="title[]" class="form-control m-input" placeholder="Enter title" autocomplete="off">
+                                <input type="text" id = "dis[]" name="dis[]" class="form-control m-input" placeholder="Enter Discripation" autocomplete="off">
+                                <div class="input-group-append">                
+                                    <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                                </div>
                         </div>
                     </div>
 
