@@ -13,6 +13,9 @@
  /**
  * Register meta boxes.
  */
+
+
+ 
 function hcf_register_meta_boxes() {
     add_meta_box( 'hcf-1', __( 'Custom Field', 'hcf' ), 'hcf_display_callback', 'page' );
 }
@@ -59,42 +62,66 @@ add_action( 'save_post', 'hcf_save_meta_box' );
 /***********Add new block ******** */
 
 
-function diwp_add_wysiwyg_editor_metabox(){
- 
-    add_meta_box(
-                    'editor1',
-                    'My Custom Editor 2',
-                    'diwp_custom_html_code_editor',
-                    'page'
-              );
- 
+/* Define the custom box */
+add_action( 'add_meta_boxes', 'wp_editor_callback' );
+
+/* Do something with the data entered */
+add_action( 'save_post', 'myplugin_save_postdata' );
+
+/* Adds a box to the main column on the Post and Page edit screens */
+function wp_editor_callback() {
+	add_meta_box( 'wp_editor_test_1_box', 'WP Editor FOR 3 BOX', 'wp_editor_meta_box' );
 }
- 
-add_action('add_meta_boxes', 'diwp_add_wysiwyg_editor_metabox');
 
-    // Callback function for our custom metabox
- 
-    function diwp_custom_html_code_editor(){
-     
-        // function that will add the wp editor in the metabox.
-        wp_editor( $content, 'diwp_custom_editor', array() );
+/* Prints the box content */
+function wp_editor_meta_box( $post ) {
+  wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
+	
+	$field_value = get_post_meta( $post->ID, 'wp_editor_1', false );
+	wp_editor( $field_value[0], 'wp_editor_1' );
+}
+
+/* When the post is saved, saves our custom data */
+function myplugin_save_postdata( $post_id ) {
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+      return;
+  if ( ( isset ( $_POST['myplugin_noncename'] ) ) && ( ! wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename( __FILE__ ) ) ) )
+      return;
+
+
+  // OK, we're authenticated: we need to find and save the data
+  if ( isset ( $_POST['wp_editor_1'] ) ) {
+    update_post_meta( $post_id, 'wp_editor_1', $_POST['wp_editor_1'] );
+    }
+
+}
+
+
+/***********Add new block ******** */
+function lava_register_meta_boxes() {
+    add_meta_box( 'lava-1', __( 'Custom Field 3', 'lava' ), 'lava_display_callback', 'page' );
+}
+add_action( 'add_meta_boxes', 'lava_register_meta_boxes' );
+function lava_display_callback( $post ) {
+    include plugin_dir_path( __FILE__ ) . './form2.php';
+}
+
+function lava_save_meta_box( $post_id ) {
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    if ( $parent_id = wp_is_post_revision( $post_id ) ) {
+        $post_id = $parent_id;
+    }
+    $fields = [
+        'img[]',
+        'title[]',
+        'dis[]'
         
-    }
-  
-    function diwp_save_custom_wp_editor_content(){
- 
-        global $post;
-     
-        if(isset($_POST['diwp_custom_editor'])){
-            update_post_meta($post->ID, 'diwp_custom_editor', $_POST['diwp_custom_editor']);
-            
+        
+    ];
+    foreach ( $fields as $field ) {
+        if ( array_key_exists( $field, $_POST ) ) {
+            update_post_meta( $post_id, $field, sanitize_text_field( $_POST[$field] ) );
         }
-     
-    }
-     
-    add_action( 'save_post', 'diwp_save_custom_wp_editor_content' );
-
-
-    
-    
-    
+     }
+}
+add_action( 'save_post', 'lava_save_meta_box' );

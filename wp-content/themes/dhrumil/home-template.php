@@ -36,36 +36,7 @@ get_header();
     <section class="section" id="about">
         <div class="container">
             <div class="row">
-            
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                        <?php echo get_post_meta($post->ID, '_diwp_custom_editor', true);
-                        
-                      
-                        
-                        ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                        <?php dynamic_sidebar( 'Site Optimization'); ?>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                        <?php dynamic_sidebar( 'Email Design'); ?>
-                        </div>
-                    </div>
-                </div>
+            <?php echo get_post_meta($post->ID, 'wp_editor_1', true); ?>
             </div>
         </div>
     </section>
@@ -96,7 +67,7 @@ get_header();
                 <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                     <ul>
                         <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            
+                        <?php echo get_post_meta($post->ID, 'wp_editor_1', true); ?>
                             <div class="text">
                                 <?php 
                                 $post_7 = get_post( 188 );
