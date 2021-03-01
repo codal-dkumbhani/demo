@@ -68,7 +68,7 @@ add_action( 'add_meta_boxes', 'wp_editor_callback' );
 /* Do something with the data entered */
 add_action( 'save_post', 'myplugin_save_postdata' );
 
-/* Adds a box to the main column on the Post and Page edit screens *//*
+/* Adds a box to the main column on the Post and Page edit screens */
 function wp_editor_callback() {
 	add_meta_box( 'wp_editor_test_1_box', 'WP Editor FOR 3 BOX', 'wp_editor_meta_box' );
 }
@@ -111,29 +111,46 @@ function custom_meta_box_markup($post){
     
 }
 
-function save_meta_box($post_id){
+function save_meta_box($post_id) {
+    // Bail if we're doing an auto save
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){
-        return;
-    }
+ 
+    // if our current user can't edit this post, bail
     if ( $parent_id = wp_is_post_revision( $post_id ) ) {
         $post_id = $parent_id;
     }
-    $fields = [
-        'img',
-        'title',
-        'dis'
-        
-        
-        
+ 
+    // now we can actually save the data
+    $fields =[
+        'img' => array('img'),
+        'title1' => array('title1'),
+        'dis'=> array('dis')
     ];
-    foreach ( $fields as $field ) {
-        if ( array_key_exists( $field, $_POST ) ) {
-            update_post_meta( $post_id, $field, sanitize_text_field( $_POST[$field] ) );
-           echo $_POST[$field]; 
-        }
-     }
-     
+    // If any value present in input field, then update the post meta
+    
+    if(isset($_POST['img'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'img', $_POST['img'] );
+    }
+    if(isset($_POST['title1'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'title1', $_POST['title1'] );
+    }
+    if(isset($_POST['dis'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'dis', $_POST['dis'] );
+    }
 }
+add_action('save_post', 'save_meta_box');
+
+
+
+
+
+
+
+
+
 
 
