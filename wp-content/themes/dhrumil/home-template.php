@@ -90,7 +90,6 @@ get_header();
                                         $url_to_my_attachment = $img[$i];
                                         $attachment_id = attachment_url_to_postid($url_to_my_attachment);
                                         print wp_get_attachment_image($attachment_id);
-                                       // echo $img[$i];
                                         echo "<h4>".$test."</h4>";
                                         echo "<p>".$dis[$i]."</p>";
                                         $i++;

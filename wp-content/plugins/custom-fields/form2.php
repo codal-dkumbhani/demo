@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Add or Remove Input Fields Dynamically using jQuery - MyNotePaper</title>
-
+    <title>Add or Remove Input Fields Dynamically using jQuery</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -29,14 +28,14 @@
                                         $url_to_my_attachment = $img[$i];
                                         $attachment_id = attachment_url_to_postid($url_to_my_attachment);
                                     ?>
-                                    <input type="text" class="img" id="img" name="img[]" value="<?php echo $img[$i] ?>" placeholder="http://">
-                                    <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
-                                    <input type="text" id = "title1" name="title1[]" class="form-control m-input" value="<?php echo $test ?>" placeholder="Enter title" autocomplete="off">
-                                    <input type="text" id = "dis" name="dis[]" class="form-control m-input" value="<?php echo $dis[$i] ?>" placeholder="Enter Discripation" autocomplete="off">
-                                    <div class="input-group-append">                
-                                        <button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>
-                                    </div>
-                                    <?php $i++;  } ?>
+                                        <input type="text" class="img" id="img" name="img[]" value="<?php echo $img[$i] ?>" placeholder="http://">
+                                        <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
+                                        <input type="text" id = "title1" name="title1[]" class="form-control m-input" value="<?php echo $test ?>" placeholder="Enter title" autocomplete="off">
+                                        <input type="text" id = "dis" name="dis[]" class="form-control m-input" value="<?php echo $dis[$i] ?>" placeholder="Enter Discripation" autocomplete="off">
+                                        <div class="input-group-append">                
+                                            <button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>
+                                        </div>
+                                    <?php $i++; } ?>
                         </div>
                     </div>
 
@@ -62,22 +61,24 @@
             html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>';
             html += '</div>';
             html += '</div>';
+            
 
             $('#newRow').append(html);
         });
-
+            
         // remove row
         $(document).on('click', '#removeRow', function () {
             $(this).closest('#inputFormRow').remove();
         });
+        
     </script>
 </body>
 </html>
 <?php
-add_action ('admin_enqueue_scripts', function() {
-    if(is_admin())
-    wp_enqueue_media(); 
-});
+    add_action ('admin_enqueue_scripts', function() {
+        if(is_admin())
+        wp_enqueue_media(); 
+    });
 ?>
 
 <script>

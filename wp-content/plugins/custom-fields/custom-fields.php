@@ -146,11 +146,7 @@ add_action('save_post', 'save_meta_box');
 
 
 
-
-
-
-
-
+/***********Add new block ******** */
 
 
 
