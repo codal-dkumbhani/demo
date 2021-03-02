@@ -127,7 +127,7 @@ get_header();
                             $tes_title = get_post_meta( 259, 'tes_title',true) ; 
                             $tes_dis = get_post_meta( 259, 'tes_dis',true) ; 
                             $i=0;
-                            for ($i=0; $i<count($tes_img); $i++){
+                            for ($i=0; $i<count($tes_title); $i++){
                             ?>     
                             <div class="item service-item">
                                 <div class="author"><?php

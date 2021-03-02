@@ -181,7 +181,7 @@ function tes_save_meta($post_id) {
         'tes_dis'=> array('tes_dis')
     ];
     // If any value present in input field, then update the post meta
-    
+        
     if(isset($_POST['tes_img'])) {
         // $post_id, $meta_key, $meta_value
         update_post_meta( $post_id, 'tes_img', $_POST['tes_img'] );
