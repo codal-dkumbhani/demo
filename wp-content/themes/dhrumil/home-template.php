@@ -122,10 +122,25 @@ get_header();
                 <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"> 
                     <div class="owl-carousel owl-theme">
-                        
-                            <?php dynamic_sidebar( 'testimonial' ); ?>
-                        
-                        
+                        <?php  
+                            $tes_img = get_post_meta( 259, 'tes_img',true) ; 
+                            $tes_title = get_post_meta( 259, 'tes_title',true) ; 
+                            $tes_dis = get_post_meta( 259, 'tes_dis',true) ; 
+                            $i=0;
+                            for ($i=0; $i<count($tes_img); $i++){
+                            ?>     
+                            <div class="item service-item">
+                                <div class="author"><?php
+                                            $url_to_my_attachment = $tes_img[$i];
+                                            ?>
+                                    <i><img src=<?php echo $url_to_my_attachment ?> alt="Author Third"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <h4><?php echo $tes_title[$i]; ?></h4>
+                                    <p><?php echo $tes_dis[$i]; ?></p>
+                                </div>
+                            </div>
+                        <?php } ?>
                         
                     </div>
                 </div>

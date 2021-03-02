@@ -14,7 +14,7 @@
  * Register meta boxes.
  */
 
-
+$post_id = get_the_ID();
  
 function lava_register_meta_boxes() {
     add_meta_box( 'lava-1', __( 'Custom Field', 'lava' ), 'lava_display_callback', 'page' );
@@ -139,6 +139,7 @@ function save_meta_box($post_id) {
     }
     if(isset($_POST['dis'])) {
         // $post_id, $meta_key, $meta_value
+        
         update_post_meta( $post_id, 'dis', $_POST['dis'] );
     }
 }
@@ -148,5 +149,52 @@ add_action('save_post', 'save_meta_box');
 
 /***********Add new block ******** */
 
+
+function add_custom_meta_box2()
+{
+    add_meta_box("testimonial_metabox", "Testimonial Meta Box", "custom_meta_box_testimonial", "page");
+}
+
+add_action("add_meta_boxes", "add_custom_meta_box2");
+
+function custom_meta_box_testimonial($post){
+    include plugin_dir_path( __FILE__ ) . './form3.php';
+}
+
+add_action('save_post', 'tes_save_meta');
+
+function tes_save_meta($post_id) { 
+    
+    // Bail if we're doing an auto save
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    
+ 
+    // if our current user can't edit this post, bail
+    if ( $parent_id = wp_is_post_revision( $post_iABCd ) ) {
+        $post_id = $parent_id;
+    }
+ 
+    // now we can actually save the data
+    $fields1 =[
+        'tes_img' => array('tes_img'),
+        'tes_title' => array('tes_title'),
+        'tes_dis'=> array('tes_dis')
+    ];
+    // If any value present in input field, then update the post meta
+    
+    if(isset($_POST['tes_img'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'tes_img', $_POST['tes_img'] );
+    }
+    if(isset($_POST['tes_title'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'tes_title', $_POST['tes_title'] );
+    }
+    if(isset($_POST['tes_dis'])) {
+        // $post_id, $meta_key, $meta_value
+        update_post_meta( $post_id, 'tes_dis', $_POST['tes_dis'] );
+    }
+}
+add_action('save_post', 'tes_save_meta');
 
 
