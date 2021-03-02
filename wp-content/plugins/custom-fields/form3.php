@@ -22,14 +22,15 @@
                             $tes_title = get_post_meta( 259, 'tes_title',true) ; 
                             $tes_dis = get_post_meta( 259, 'tes_dis',true) ; 
                             for ($i=0; $i<count($tes_title); $i++){
-                            ?> 
-                                <input type="text" class="img" id="tes_img" name="tes_img[]" value="<?php echo $tes_img[$i]; ?>" placeholder="http://">
-                                            <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
-                                <input type="text" id="tes_title" name="tes_title[]" class="form-control m-input" value="<?php $tes_title[$i]; ?>" placeholder="Enter title"  autocomplete="off">
-                                <input type="text" id = "tes_dis" name="tes_dis[]" class="form-control m-input" value="<?php $tes_dis[$i]; ?>" placeholder="Enter Discripation" autocomplete="off">
-                                <div class="input-group-append">                
-                                    <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
-                                </div>
+                            ?> <div>
+                                    <input type="text" class="img" id="tes_img" name="tes_img[]" value="<?php echo $tes_img[$i]; ?>" placeholder="http://">
+                                                <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
+                                    <input type="text" id="tes_title" name="tes_title[]" class="form-control m-input" value="<?php echo $tes_title[$i]; ?>" placeholder="Enter title"  autocomplete="off">
+                                    <input type="text" id = "tes_dis" name="tes_dis[]" class="form-control m-input" value="<?php echo $tes_dis[$i]; ?>" placeholder="Enter Discripation" autocomplete="off">
+                                    <div class="input-group-append">                
+                                        <button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>
+                                    </div>
+                               </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -59,6 +60,7 @@
 
         // remove row
         $('#removeRow').click(function(){
+            
             $("#inputFormRow").remove();
             
         });

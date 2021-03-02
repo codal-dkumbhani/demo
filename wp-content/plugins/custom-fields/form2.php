@@ -24,14 +24,15 @@
                                     foreach ($title1 as $test ){
                                         $url_to_my_attachment = $img[$i];
                                         $attachment_id = attachment_url_to_postid($url_to_my_attachment);
-                                    ?>
-                                        <input type="text" class="img" id="img" name="img[]" value="<?php echo $img[$i]; ?>" placeholder="http://">
-                                        <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
-                                        <input type="text" id = "title1" name="title1[]" class="form-control m-input" value="<?php echo $test; ?>" placeholder="Enter title" autocomplete="off">
-                                        <input type="text" id = "dis" name="dis[]" class="form-control m-input" value="<?php echo $dis[$i]; ?>" placeholder="Enter Discripation" autocomplete="off">
-                                        <div class="input-group-append">                
-                                            <button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>
-                                        </div>
+                                    ?><div>
+                                            <input type="text" class="img" id="img" name="img[]" value="<?php echo $img[$i]; ?>" placeholder="http://">
+                                            <button class="set_custom_logo button" style="vertical-align: middle;">Select Image</button>
+                                            <input type="text" id = "title1" name="title1[]" class="form-control m-input" value="<?php echo $test; ?>" placeholder="Enter title" autocomplete="off">
+                                            <input type="text" id = "dis" name="dis[]" class="form-control m-input" value="<?php echo $dis[$i]; ?>" placeholder="Enter Discripation" autocomplete="off">
+                                            <div class="input-group-append">                
+                                                <button id="removeRow" type="button" class="btn btn-danger">Remove</button><br>
+                                            </div>
+                                      </div>
                                     <?php $i++; } ?>
                         </div>
                     </div>
