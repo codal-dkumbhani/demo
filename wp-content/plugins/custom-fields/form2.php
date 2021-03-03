@@ -14,6 +14,14 @@
         </div>
             <div class="row">
                 <div class="col-lg-12">
+                    <div>
+                        <?php  
+                            $side_img = get_post_meta( get_the_ID(), 'side_img',true) ;
+                            $i=0;
+                        ?>
+                        <input type="text" class="img" id="side_img" name="side_img[]" value="<?php echo $side_img[$i]; ?>" placeholder="http://">
+                            <button class="set_custom_logo button" style="vertical-align: middle;">Select Side Image</button>
+                    </div>
                     <div id="inputFormRow">
                         <div class="input-group mb-3">
                         <?php  
@@ -22,10 +30,7 @@
                                     $title1 = get_post_meta( 259, 'title1',true) ;
                                     $dis = get_post_meta( 259, 'dis',true) ;
                                     $i=0; ?>
-                                    <div>
-                                    <input type="text" class="img" id="side_img" name="side_img[]" value="<?php echo $side_img[$i]; ?>" placeholder="http://">
-                                                <button class="set_custom_logo button" style="vertical-align: middle;">Select Side Image</button>
-                                    </div>
+                                    
                                     <?php    
                                         foreach ($title1 as $test ){
                                             $url_to_my_attachment = $img[$i];

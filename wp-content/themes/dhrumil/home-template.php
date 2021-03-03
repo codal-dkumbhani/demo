@@ -49,9 +49,8 @@ get_header();
             <div class="row">
                 <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/about-icon-01.png" alt="">
                     <?php   
-                    //side image 
+                        //side image 
                         $side_img = get_post_meta( get_the_ID(), 'side_img',true) ;
                         $url_to_my_attachment = $side_img[0];
                         $attachment_id = attachment_url_to_postid($url_to_my_attachment);
@@ -63,7 +62,7 @@ get_header();
                 <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                     <ul>
                         <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            <div class="text">
+                            <div class="text">  
                                 <?php  
                                     $img = get_post_meta( 259, 'img',true) ;
                                     $title1 = get_post_meta( 259, 'title1',true) ;
@@ -72,7 +71,7 @@ get_header();
                                     foreach ($title1 as $test ){
                                         $url_to_my_attachment = $img[$i];
                                         $attachment_id = attachment_url_to_postid($url_to_my_attachment);
-                                        print wp_get_attachment_image($attachment_id);
+                                        echo wp_get_attachment_image($attachment_id);
                                         echo "<h4>".$test."</h4>";
                                         echo "<p>".$dis[$i]."</p>";
                                         $i++;
