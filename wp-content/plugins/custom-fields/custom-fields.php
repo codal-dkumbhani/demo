@@ -182,15 +182,15 @@ function tes_save_meta($post_id) {
     ];
     // If any value present in input field, then update the post meta
         
-    if(isset($_POST['tes_img'])) {
+    if(!empty($_POST['tes_img'])) {
         // $post_id, $meta_key, $meta_value
         update_post_meta( $post_id, 'tes_img', $_POST['tes_img'] );
     }
-    if(isset($_POST['tes_title'])) {
+    if(!empty($_POST['tes_title'])) {
         // $post_id, $meta_key, $meta_value
         update_post_meta( $post_id, 'tes_title', $_POST['tes_title'] );
     }
-    if(isset($_POST['tes_dis'])) {
+    if(!empty($_POST['tes_dis'])) {
         // $post_id, $meta_key, $meta_value
         update_post_meta( $post_id, 'tes_dis', $_POST['tes_dis'] );
     }

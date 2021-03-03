@@ -60,7 +60,6 @@
 
         // remove row
         $('#removeRow').click(function(){
-            
             $("#inputFormRow").remove();
             
         });

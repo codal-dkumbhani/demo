@@ -136,6 +136,12 @@ get_header();
                                     <i><img src=<?php echo $url_to_my_attachment ?> alt="Author Third"></i>
                                 </div>
                                 <div class="testimonial-content">
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
                                     <h4><?php echo $tes_title[$i]; ?></h4>
                                     <p><?php echo $tes_dis[$i]; ?></p>
                                 </div>
