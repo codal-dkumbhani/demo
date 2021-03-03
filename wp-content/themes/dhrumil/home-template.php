@@ -49,37 +49,20 @@ get_header();
             <div class="row">
                 <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    
-                <div class="rounded img-fluid d-block mx-auto" >
-               
-                <?php/* $test =  get_post_meta( get_the_ID(), 'img',true) ; 
-                    print_r($test);
-                   $test1 =  get_post_meta( get_the_ID(), 'title1', true )  ; 
-                    print_r($test1);
-                    $test2 =  get_post_meta( get_the_ID(), 'dis', true )  ; 
-                    print_r($test2);*/?>
-
-                        <?php   
-                        $post = get_post(188);
-                            
-                            /* grab the url for the full size featured image */
-                            $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full'); 
-                            
-                            /* link thumbnail to full size image for use with lightbox*/
-                            echo '<a href="'.$featured_img_url.'"  rel="lightbox">'; 
-                            the_post_thumbnail('full');
+                    <img src="assets/images/about-icon-01.png" alt="">
+                    <?php   
+                    //side image 
+                        $side_img = get_post_meta( get_the_ID(), 'side_img',true) ;
+                        $url_to_my_attachment = $side_img[0];
+                        $attachment_id = attachment_url_to_postid($url_to_my_attachment);
+                            echo '<a href="'.$url_to_my_attachment.'"  rel="lightbox">'; 
+                            echo "<img src='$url_to_my_attachment' alt=''>";
                             echo '</a>';
-                            ?>   
-                    </div>
-                    
+                    ?>
                 </div>
-                
                 <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                     <ul>
-                       <?php //foreach($test as $key=> $value){?>
-                           
-                            <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                             <div class="text">
                                 <?php  
                                     $img = get_post_meta( 259, 'img',true) ;
@@ -97,7 +80,6 @@ get_header();
                                 ?>
                             </div>
                         </li>
-                        <?php //echo "<br>"; }  ?>
                     </ul>
                 </div>
             </div>

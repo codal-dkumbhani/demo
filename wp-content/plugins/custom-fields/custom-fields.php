@@ -123,12 +123,16 @@ function save_meta_box($post_id) {
  
     // now we can actually save the data
     $fields =[
+        'side_img' => array('side_img'),
         'img' => array('img'),
         'title1' => array('title1'),
         'dis'=> array('dis')
     ];
     // If any value present in input field, then update the post meta
-    
+    if (isset($_POST['side_img'])){
+        update_post_meta( $post_id, 'side_img', $_POST['side_img'] );
+    }
+
     if(isset($_POST['img'])) {
         // $post_id, $meta_key, $meta_value
         update_post_meta( $post_id, 'img', $_POST['img'] );
