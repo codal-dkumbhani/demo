@@ -74,7 +74,6 @@ get_header();
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <?php   
                             //side image 
-
                              if( get_field('side_image_') ):?>
                                 <img src="<?php the_field('side_image_'); ?>" />
                             <?php endif; ?>
@@ -124,26 +123,34 @@ get_header();
                 <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"> 
                     <div class="owl-carousel owl-theme">
-                        <div class="item service-item">
                             <?php
                                 if( have_rows('testimonial_slider') ):
                                     while( have_rows('testimonial_slider') ) : the_row();
                                         $tes_image = get_sub_field('testimonial_image');
                                         $tes_name = get_sub_field('testimonial_name');
                                         $tes_review = get_sub_field('testimonial_review');
+                                        
                                         ?>
+                                        <div class="item service-item">
                                         <div class="author">
                                             <i><img src='<?php echo $tes_image ?>' alt=""></i>
                                         </div>
                                         <div class="testimonial-content">
+                                        <ul class="stars">
+                                            <?php $star = get_sub_field('star'); 
+                                                for($i = 0;$i<$star; $i++){
+                                                    echo "<li><i class='fa fa-star'></i></li>";
+                                                }
+                                            ?>
+                                        </ul>
                                             <h4><?php echo $tes_name ?></h4>
                                             <p><?php echo $tes_review ?></p>
+                                        </div>
                                         </div>
                                         <?php
                                     endwhile;
                                 endif; 
                             ?>
-                        </div>
                     </div>
                 </div>
             </div>
