@@ -91,3 +91,5 @@ require_once ABSPATH . 'wp-settings.php';
 
 define( 'UPLOADS', 'wp-content/uploads' );
 define('FS_METHOD','direct');
+
+// comment 1
