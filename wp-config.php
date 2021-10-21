@@ -93,3 +93,4 @@ define( 'UPLOADS', 'wp-content/uploads' );
 define('FS_METHOD','direct');
 
 // comment 1
+// comment 2
