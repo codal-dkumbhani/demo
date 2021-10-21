@@ -92,5 +92,9 @@ require_once ABSPATH . 'wp-settings.php';
 define( 'UPLOADS', 'wp-content/uploads' );
 define('FS_METHOD','direct');
 
+<<<<<<< HEAD
 // comment 1
 // comment 2
+=======
+// comment 1
+>>>>>>> 4b9519f... commant 1
